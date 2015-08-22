@@ -50,7 +50,12 @@ var AvatarEditor = React.createClass({
         height: React.PropTypes.number,
         color: React.PropTypes.arrayOf(React.PropTypes.number),
         onImageReady: React.PropTypes.func,
+        handleChange: React.PropTypes.func,
         style: React.PropTypes.object
+    },
+    
+    shouldComponentUpdate(nextProps, nextState){
+      this.props.handleChange(nextState)
     },
 
     getDefaultProps() {
