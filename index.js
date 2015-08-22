@@ -56,7 +56,7 @@ var AvatarEditor = React.createClass({
     
     shouldComponentUpdate(nextProps, nextState){
       this.props.handleChange(nextState);
-      return true;
+      return JSON.stringify(this.state) !== JSON.stringify(nextState);
     },
 
     getDefaultProps() {
